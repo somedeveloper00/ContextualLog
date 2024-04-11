@@ -16,7 +16,7 @@ namespace ContextualLog.Implementations
         {
             string message = $"[{DateTime.UtcNow} {context.GetPrintableContextNamesRecursive("/")}] {msg}";
 #if UNITY_EDITOR
-            Debug.LogError(message);
+            Debug.Log(message);
 #else
             using (new ConsoleForegroundColor(ConsoleColor.Green))
                 Console.WriteLine(message);
@@ -27,7 +27,7 @@ namespace ContextualLog.Implementations
         {
             string message = $"[{DateTime.UtcNow} {context.GetPrintableContextNamesRecursive("/")}] {msg}";
 #if UNITY_EDITOR
-            Debug.LogError(message);
+            Debug.LogWarning(message);
 #else
             using (new ConsoleForegroundColor(ConsoleColor.Yellow))
                 Console.WriteLine(message);
